@@ -1,5 +1,7 @@
 package exercicio7
 
+import kotlin.system.exitProcess
+
 class SalaDeAula {
     data class Resultado(val valor1: DoubleArray, val valor2: Int)
 
@@ -47,6 +49,10 @@ class SalaDeAula {
             var numero: Int
             try {
                 numero = readln().toInt()
+                if (numero == 0) {
+                    println("Não há alunos para calcular a média.")
+                    exitProcess(0)
+                }
                 if (numero < 0) {
                     println("Entrada inválida. Por favor, digite um número positivo.")
                     continue
